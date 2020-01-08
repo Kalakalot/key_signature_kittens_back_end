@@ -16,11 +16,9 @@ collection = pymongo.collection.Collection(db, 'by_name')
 
 data = dumps(collection.find())
 
-
 @app.route('/')
 def index():
   print(data) 
- 
   # return 'Welcome to Key Signature Kittens. Learn key signature, earn (digital) kittens!'
   return data
 @app.route('/hello')
