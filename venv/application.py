@@ -19,9 +19,5 @@ data = dumps(collection.find())
 @app.route('/')
 def index():
   print(data) 
-  # return 'Welcome to Key Signature Kittens. Learn key signature, earn (digital) kittens!'
-  return data
-@app.route('/hello')
-def hello_world():
-  return 'Hello, World!'
-  
+  # return 'Welcome to Key Signature Kittens. Learn key signatures, earn (digital) kittens!'
+  return data  
