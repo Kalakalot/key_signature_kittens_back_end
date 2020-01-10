@@ -1,5 +1,4 @@
-from flask import Flask
-# from flask import jsonify
+from flask import Flask, make_response
 import pymongo
 import config
 from bson.json_util import dumps
@@ -18,6 +17,8 @@ data = dumps(collection.find())
 
 @app.route('/')
 def index():
+  response = make_response(data)
+  response.headers.add('Access-Control-Allow-Origin', '*')
   print(data) 
   # return 'Welcome to Key Signature Kittens. Learn key signatures, earn (digital) kittens!'
-  return data  
+  return response  
